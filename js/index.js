@@ -1,3 +1,7 @@
+// Private API keys removed for obvious reasons.
+// Will not work without Google Maps and forecast.io API keys!
+
+
 var longitude = 0;
 var latitude = 0;
 var address = "";
@@ -7,7 +11,7 @@ function getForecast() {
 
   
   $.ajax({
-    url: "https://crossorigin.me/https://api.forecast.io/forecast/42ddf26832c7e1d6bf1d9df040c1a8d1/" + latitude + "," + longitude,
+    url: "https://api.forecast.io/forecast/API-KEY" + latitude + "," + longitude,
     datatype: "json",
     success: function(response) {
       //console.log(response);
@@ -66,7 +70,7 @@ function errorLocation(error) {
 
 function addressLocation(locationInput) {
    $.ajax({
-    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(locationInput) + "&key=AIzaSyAnD4-eA5kPg84p48xud5FEAP8QKtFcX2o",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(locationInput) + "&key=API-KEY",
     datatype: "json",
     success: function(response) {
       console.log(response);
@@ -90,7 +94,7 @@ function addressLocation(locationInput) {
 
 function getAddress(lat,long) {
    $.ajax({
-    url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyAnD4-eA5kPg84p48xud5FEAP8QKtFcX2o",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=API-KEY",
     datatype: "json",
     success: function(response) {
       console.log(response);
